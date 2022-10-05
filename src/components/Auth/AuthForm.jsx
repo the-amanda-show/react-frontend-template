@@ -1,15 +1,14 @@
-
-import { type } from '@testing-library/user-event/dist/types/utility/type.js';
+/* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../state/UserContext.jsx';
-import { InputControl, FormButton } from '../Forms/FormControls.jsx';
+import { InputControl, FormButton } from '../Forms/FormControl.jsx';
 import { useForm } from '../Forms/useForm.js';
 import styles from './AuthForm.css';
 
 export default function AuthForm({ mode = 'signin' }) {
   const { signUp, signIn, error } = useAuth(); 
   const [credentials, handleChange] = useForm({
-    emaiil: '',
+    email: '',
     password: '',
   });
   const handleSubmit = async (e) => {
@@ -39,10 +38,30 @@ export default function AuthForm({ mode = 'signin' }) {
   const type = modes[mode];
 
   return(
-    <form>
-        
+    <form className={styles.AuthForm} onSubmit={handleSubmit}>
+      <h2>{type.prompt}</h2>
+      <InputControl 
+        label="Email"
+        name="email"
+        type="email"
+        required value ={credentials.email}
+        onChange={handleChange}
+      />
+      <InputControl
+        label="Password"
+        name="password"
+        type="password"
+        required value ={credentials.password}
+        onChange={handleChange}
+      />
+      <FormButton>{type.prompt}</FormButton>
+      <p className="error">{error}</p>
+      <nav>
+        <Link to={type.switch.link}>{type.switch.prompt}</Link>
+      </nav>
     </form>
-  )
+  );
+
 
 
 

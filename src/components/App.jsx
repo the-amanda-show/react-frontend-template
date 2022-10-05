@@ -14,6 +14,7 @@ import Layout from './Page/Layout.jsx';
 import Form from './Forms/FormLayout.jsx';
 import Search from './Search/Search.jsx';
 import Auth from './Auth/Auth.jsx';
+import AuthForm from './Auth/AuthForm.jsx';
 
 export default function App() {
   return (
@@ -30,8 +31,8 @@ export default function App() {
           <Route path="form" element={<Form />} />
           <Route path="search" element={<Search />} />
           <Route path="auth" element={<Auth />}>
-            {/* <Route index element={<AuthForm mode="signin" />} /> */}
-            {/* <Route path="signup" element={<AuthForm mode="signup" />} /> */}
+            <Route index element={<AuthForm mode="signin" />} />
+            <Route path="signup" element={<AuthForm mode="signup" />} />
             {/* <Route element={<ProtectedRoute />}> */}
           </Route>
         </Route>
