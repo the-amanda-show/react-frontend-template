@@ -16,29 +16,33 @@ import Search from './Search/Search.jsx';
 import Auth from './Auth/Auth.jsx';
 import AuthForm from './Auth/AuthForm.jsx';
 import ProtectedRoute from './Auth/ProtectedRoute.jsx';
+import UserProvider from '../state/UserContext.jsx';
 
 export default function App() {
   return (
     <Router>
-      <Routes>
-        <Route element={<Layout />} >
-          <Route index element={<Colors />} />
-          <Route path="orange" element={<Orange />} />
-          <Route path="blue" element={<Blue />} >
-            <Route path="baby blue" index element={<BabyBlue />} />
-            <Route path="dark blue" element={<DarkBlue />} />
-            <Route path="blue green" element={<BlueGreen />} />
+      <UserProvider>
+
+        <Routes>
+          <Route element={<Layout />} >
+            <Route index element={<Colors />} />
+            <Route path="orange" element={<Orange />} />
+            <Route path="blue" element={<Blue />} >
+              <Route path="baby blue" index element={<BabyBlue />} />
+              <Route path="dark blue" element={<DarkBlue />} />
+              <Route path="blue green" element={<BlueGreen />} />
+            </Route>
+            <Route path="form" element={<Form />} />
+            <Route path="search" element={<Search />} />
+            <Route path="auth" element={<Auth />}>
+              <Route index element={<AuthForm mode="signin" />} />
+              <Route path="signup" element={<AuthForm mode="signup" />} />
+              <Route element={<ProtectedRoute />} />
+            </Route>
           </Route>
-          <Route path="form" element={<Form />} />
-          <Route path="search" element={<Search />} />
-          <Route path="auth" element={<Auth />}>
-            <Route index element={<AuthForm mode="signin" />} />
-            <Route path="signup" element={<AuthForm mode="signup" />} />
-            <Route element={<ProtectedRoute />} />
-          </Route>
-        </Route>
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </UserProvider>
     </Router>
   );
 }
