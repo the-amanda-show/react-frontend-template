@@ -1,0 +1,8 @@
+.AuthForm {
+    width: 400px;
+    background: teal;
+    padding: 25px;
+  
+    display: grid;
+    gap: 30px;
+  }

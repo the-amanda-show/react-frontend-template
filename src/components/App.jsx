@@ -30,7 +30,19 @@ export default function App() {
           <Route path="form" element={<Form />} />
           <Route path="search" element={<Search />} />
           <Route path="auth" element={<Auth />}>
-            {/* <Route index element={<AuthForm mode="signin" />} /> */}
+            {/* <Route index element={<AuthForm mode="signin" />} />
+            <Route path="signup" element={<AuthForm mode="signup" />} />
+            <Route element={<ProtectedRoute />}>
+              <Route element={<Layout />}>
+                <Route index element={<Dashboard />} />
+                <Route element={<ListsProvider />}>
+                  <Route path="lists">
+                    <Route index element={<Lists />} />
+                    <Route path=":id" element={<ShoppingList />} />
+                  </Route>
+                </Route>
+              </Route>
+            </Route> */}
           </Route>
           
         </Route>
