@@ -13,6 +13,7 @@ import DarkBlue from './Blue/DarkBlue.jsx';
 import Layout from './Page/Layout.jsx';
 import Form from './Forms/FormLayout.jsx';
 import Search from './Search/Search.jsx';
+import Auth from './Auth/Auth.jsx';
 
 export default function App() {
   return (
@@ -28,7 +29,10 @@ export default function App() {
           </Route>
           <Route path="form" element={<Form />} />
           <Route path="search" element={<Search />} />
-
+          <Route path="auth" element={<Auth />}>
+            {/* <Route index element={<AuthForm mode="signin" />} /> */}
+          </Route>
+          
         </Route>
 
 
