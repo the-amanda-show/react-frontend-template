@@ -22,7 +22,6 @@ export default function App() {
   return (
     <Router>
       <UserProvider>
-
         <Routes>
           <Route element={<Layout />} >
             <Route index element={<Colors />} />
