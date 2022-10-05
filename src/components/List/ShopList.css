@@ -1,0 +1,14 @@
+
+.ShoppingList {
+    display: grid;
+    gap: 20px;
+  
+}
+
+.ShoppingList ul {
+  padding: 10px;
+  display: grid;
+  gap: 10px;
+  background: darkgrey;
+  width: 400px;
+}
