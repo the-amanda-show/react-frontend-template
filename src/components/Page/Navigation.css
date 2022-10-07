@@ -8,10 +8,9 @@
       flex-direction: row;
     }
   
-    a {
-      padding: 3px 7px;
-      color: var(--white-color);
-      text-decoration: none;
-      padding: 0;
-    }
+  }
+   .Navigation a {
+    padding: 3px 7px;
+    text-decoration: none;
+    padding: 0;
   }

@@ -32,7 +32,7 @@ export default function ListProvider({ children }) {
 
   const addList = (list) => {
     setLists((lists) => [...lists, list]);
-    setListById((setListById) => ({
+    setListById((listById) => ({
       ...listsById, [list.id]: list,
     }));
   };

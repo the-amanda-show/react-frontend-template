@@ -26,21 +26,21 @@ export default function App() {
     <Router>
       <UserProvider>
         <Routes>
-          <Route index element={<Colors />} />
-          <Route path="orange" element={<Orange />} />
-          <Route path="blue" element={<Blue />} >
-            <Route path="baby blue" index element={<BabyBlue />} />
-            <Route path="dark blue" element={<DarkBlue />} />
-            <Route path="blue green" element={<BlueGreen />} />
-          </Route>
-          <Route path="form" element={<Form />} />
-          <Route path="search" element={<Search />} />
-          <Route path="auth" element={<Auth />} >
-            <Route index element={<AuthForm mode="signin" />} />
-            <Route path="signup" element={<AuthForm mode="signup" />} />
-          </Route>
-          <Route element={<ProtectedRoute />} >
-            <Route element={<Layout />} >
+          <Route element={<Layout />} >
+            <Route index element={<Colors />} />
+            <Route path="orange" element={<Orange />} />
+            <Route path="blue" element={<Blue />} >
+              <Route path="baby blue" index element={<BabyBlue />} />
+              <Route path="dark blue" element={<DarkBlue />} />
+              <Route path="blue green" element={<BlueGreen />} />
+            </Route>
+            <Route path="form" element={<Form />} />
+            <Route path="search" element={<Search />} />
+            <Route path="auth" element={<Auth />} >
+              <Route index element={<AuthForm mode="signin" />} />
+              <Route path="signup" element={<AuthForm mode="signup" />} />
+            </Route>
+            <Route element={<ProtectedRoute />} >
               <Route element={<ListProvider />} >
                 <Route path="lists">
                   <Route index element={<Lists />} />

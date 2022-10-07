@@ -8,13 +8,14 @@ export function Lists() {
 
 
   const handleAdd = async (name) => {
+    console.log('name', name);
     await addList({ name });
   };
 
   return (
     <section className={styles.Lists}>
       <h2>My Todo List</h2>
-      <AddForm onAdd={handleAdd} placeholder="new Todo"/>
+      <AddForm onAdd={handleAdd} placeholder="new list"/>
       <ul>
         {(lists || []).map((list) => {
           return (
