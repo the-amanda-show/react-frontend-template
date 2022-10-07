@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
-import { useLists } from '../../state/ListsContext.jsx';
+import { useLists } from '../../state/ListContext.jsx';
 import AddForm from '../Forms/AddForm.jsx';
 import styles from './Lists.css';
 
 export function Lists() {
   const { lists, addList } = useLists(); 
 
-  if(!lists) return null;
 
   const handleAdd = async (name) => {
     await addList({ name });
@@ -17,7 +16,7 @@ export function Lists() {
       <h2>My Todo List</h2>
       <AddForm onAdd={handleAdd} placeholder="new Todo"/>
       <ul>
-        {lists.map((list) => {
+        {(lists || []).map((list) => {
           return (
             <li key={list.id}>
               <Link to={'$list.id'}>{list.name}</Link>

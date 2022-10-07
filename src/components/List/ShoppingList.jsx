@@ -1,15 +1,13 @@
 
 import { Link, useParams } from 'react-router-dom';
-import { useList } from '../../state/ListsContext.jsx';
+import { useList } from '../../state/ListContext.jsx';
 import ItemForm from './ItemForm.jsx';
 import ListItem from './ListItem.jsx';
-import styles from './TodoList.css';
+import styles from './ShoppingList.css';
 
-export default function TodoLists() {
+export function TodoLists() {
   const { id } = useParams();
   const { list, addTodo, removeTodo, completeTodo } = useList(id);
-
-  if (!list) return null;
 
   const handleAdd = async (item) => {
     await addTodo(item);

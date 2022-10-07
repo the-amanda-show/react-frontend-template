@@ -10,6 +10,8 @@ export default function Navigation() {
       <NavLink to="form">Form</NavLink>
       <NavLink to="search">Search</NavLink>
       <NavLink to="auth">Auth</NavLink>
+      <NavLink to="lists">Lists</NavLink>
+
     </nav>
   );
 }

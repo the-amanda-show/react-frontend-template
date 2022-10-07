@@ -18,7 +18,7 @@ import AuthForm from './Auth/AuthForm.jsx';
 import ProtectedRoute from './Auth/ProtectedRoute.jsx';
 import UserProvider from '../state/UserContext.jsx';
 import ListProvider from '../state/ListContext.jsx';
-import { TodoList } from './List/TodoList.jsx';
+import { TodoLists } from './List/ShoppingList.jsx';
 import { Lists } from './List/Lists.jsx';
 
 export default function App() {
@@ -26,27 +26,25 @@ export default function App() {
     <Router>
       <UserProvider>
         <Routes>
-          <Route element={<Layout />} >
-            <Route index element={<Colors />} />
-            <Route path="orange" element={<Orange />} />
-            <Route path="blue" element={<Blue />} >
-              <Route path="baby blue" index element={<BabyBlue />} />
-              <Route path="dark blue" element={<DarkBlue />} />
-              <Route path="blue green" element={<BlueGreen />} />
-            </Route>
-            <Route path="form" element={<Form />} />
-            <Route path="search" element={<Search />} />
-            <Route path="auth" element={<Auth />} >
-              <Route index element={<AuthForm mode="signin" />} />
-              <Route path="signup" element={<AuthForm mode="signup" />} />
-              <Route element={<ProtectedRoute />} >
-                <Route element={Layout} >
-                  <Route element={<ListProvider />} >
-                    <Route path="lists">
-                      <Route index element={<Lists />} />
-                      <Route path=":id" element={<TodoList />} />
-                    </Route>
-                  </Route>
+          <Route index element={<Colors />} />
+          <Route path="orange" element={<Orange />} />
+          <Route path="blue" element={<Blue />} >
+            <Route path="baby blue" index element={<BabyBlue />} />
+            <Route path="dark blue" element={<DarkBlue />} />
+            <Route path="blue green" element={<BlueGreen />} />
+          </Route>
+          <Route path="form" element={<Form />} />
+          <Route path="search" element={<Search />} />
+          <Route path="auth" element={<Auth />} >
+            <Route index element={<AuthForm mode="signin" />} />
+            <Route path="signup" element={<AuthForm mode="signup" />} />
+          </Route>
+          <Route element={<ProtectedRoute />} >
+            <Route element={<Layout />} >
+              <Route element={<ListProvider />} >
+                <Route path="lists">
+                  <Route index element={<Lists />} />
+                  <Route path=":id" element={<TodoLists />} />
                 </Route>
               </Route>
             </Route>
