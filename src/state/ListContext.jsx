@@ -1,4 +1,4 @@
-import { data } from 'autoprefixer';
+/* eslint-disable react/prop-types */
 import {
   createContext, useContext, useEffect, useState,
 } from 'react';
@@ -61,7 +61,7 @@ export function useLists() {
   const { lists, setLists } = useContext(ListContext);
 
   const addList = async (lists) => {
-    const { data, error } = await createList(list);
+    const { data, error } = await createList(lists);
     if (error) {
       setError(error.message);
     } else {

@@ -17,6 +17,9 @@ import Auth from './Auth/Auth.jsx';
 import AuthForm from './Auth/AuthForm.jsx';
 import ProtectedRoute from './Auth/ProtectedRoute.jsx';
 import UserProvider from '../state/UserContext.jsx';
+import ListProvider from '../state/ListContext.jsx';
+import { TodoList } from './List/TodoList.jsx';
+import { Lists } from './List/Lists.jsx';
 
 export default function App() {
   return (
@@ -33,10 +36,19 @@ export default function App() {
             </Route>
             <Route path="form" element={<Form />} />
             <Route path="search" element={<Search />} />
-            <Route path="auth" element={<Auth />}>
+            <Route path="auth" element={<Auth />} >
               <Route index element={<AuthForm mode="signin" />} />
               <Route path="signup" element={<AuthForm mode="signup" />} />
-              <Route element={<ProtectedRoute />} />
+              <Route element={<ProtectedRoute />} >
+                <Route element={Layout} >
+                  <Route element={<ListProvider />} >
+                    <Route path="lists">
+                      <Route index element={<Lists />} />
+                      <Route path=":id" element={<TodoList />} />
+                    </Route>
+                  </Route>
+                </Route>
+              </Route>
             </Route>
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />

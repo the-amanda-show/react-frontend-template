@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { FormButton } from '../Forms/FormControls.jsx';
+import { FormButton } from '../Forms/FormControl.jsx';
 import styles from './ListItem.css';
 
 export default function ListItem({ item, onComplete, onRemove }) {
