@@ -11,7 +11,8 @@
     padding: 5px;
     border: 1px dashed red
 }
-.ListItem .Bought {
+
+.ListItem .Complete {
     display: grid;
     place-self: center;
 }
