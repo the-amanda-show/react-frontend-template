@@ -31,6 +31,7 @@ export default function ListProvider({ children }) {
   }, []);
 
   const addList = (list) => {
+    
     setLists((lists) => [...lists, list]);
     setListById((listById) => ({
       ...listsById, [list.id]: list,
@@ -62,6 +63,7 @@ export function useLists() {
 
   const addList = async (lists) => {
     const { data, error } = await createList(lists);
+    console.log('list', data, error);
     if (error) {
       setError(error.message);
     } else {
