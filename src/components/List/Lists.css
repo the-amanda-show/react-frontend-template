@@ -1,12 +1,27 @@
 .Lists {
-    display: grid;
-    gap: 20px;
-  
+  gap: 20px;
+  display: grid;
 }
+
 .Lists ul {
   padding: 20px;
-  background: salmon;
+  background:  rgb(13, 80, 95);
+  border: 3px solid rgb(143, 212, 212);
+  color: azure;
   width: 400px;
   display: grid;
   gap: 20px;
+}
+
+h1 {
+  color:  rgb(13, 80, 95);
+  font-size: 45px;
+  display: flex;
+  justify-content: center;
+}
+
+.div {
+  display: flex;
+  justify-content: center;
+  
 }

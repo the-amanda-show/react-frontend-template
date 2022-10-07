@@ -14,17 +14,20 @@ export function Lists() {
 
   return (
     <section className={styles.Lists}>
-      <h2>My Todo List</h2>
+      <h1>My Todo List</h1>
       <AddForm onAdd={handleAdd} placeholder="new list"/>
-      <ul>
-        {(lists || []).map((list) => {
-          return (
-            <li key={list.id}>
-              <Link to={'$list.id'}>{list.name}</Link>
-            </li>
-          );
-        })}
-      </ul>
+      <div className={styles.div}>
+
+        <ul>
+          {(lists || []).map((list) => {
+            return (
+              <li key={list.id}>
+                <Link to={'$list.id'}>{list.name}</Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </section>
   );
 }

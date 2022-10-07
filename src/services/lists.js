@@ -1,6 +1,6 @@
 import { del, get, post, put } from './request.js';
 
-const URL = '/api/v1/lists';
+const URL = 'https://myreacttemplate.herokuapp.com/api/v1/todos';
 
 export async function getLists() {
   return await get(URL);
