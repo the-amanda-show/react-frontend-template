@@ -7,9 +7,9 @@ export function Lists() {
   const { lists, addList } = useLists(); 
 
 
-  const handleAdd = async (name) => {
-    console.log('name', name);
-    await addList({ name });
+  const handleAdd = async (todo) => {
+    console.log('todo', todo);
+    await addList({ todo });
   };
 
   return (
@@ -22,7 +22,7 @@ export function Lists() {
           {(lists || []).map((list) => {
             return (
               <li key={list.id}>
-                <Link to={'$list.id'}>{list.name}</Link>
+                <Link to={'$list.id'}>{list.todo}</Link>
               </li>
             );
           })}

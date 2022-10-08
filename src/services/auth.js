@@ -1,6 +1,6 @@
 import { del, get, post } from './request.js';
 
-const URL = '/api/v1/users';
+const URL = 'https://myreacttemplate.herokuapp.com/api/v1/users';
 
 export async function signUpUser(credentials) {
   const response = await post(`${URL}/`, credentials);
