@@ -24,8 +24,11 @@ module.exports = {
     publicPath: '/',
   },
   devServer: {
-    port: 7891,
+    port: 7892,
     historyApiFallback: true,
+    proxy: {
+      "/api":'http://localhost:7898'
+    }
   },
   plugins: [
     new HtmlPlugin({ template: './src/index.html' }),

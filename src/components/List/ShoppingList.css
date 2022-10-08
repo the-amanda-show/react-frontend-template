@@ -1,0 +1,14 @@
+
+.TodoList {
+    display: grid;
+    gap: 20px;
+  
+}
+
+.TodoList ul {
+  padding: 10px;
+  display: grid;
+  gap: 10px;
+  background: darkgrey;
+  width: 400px;
+}
